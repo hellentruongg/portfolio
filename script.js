@@ -24,9 +24,15 @@ window.addEventListener("scroll", () => {
   }
 });
 
-const isMobile = window.innerWidth < 768;
+// const isMobile = window.innerWidth < 768;
 
-const threshold = isMobile ? 0.5 : 0.9;
+// const threshold = isMobile ? 0.5 : 0.9;
+
+const width = window.innerWidth;
+
+const threshold = width < 855 ? 0.3 : 0.9;
+
+// const threshold = width < 640 ? 0.2 : width < 854 ? 0.5 : 0.9;
 
 const observer = new IntersectionObserver(
   (entries) => {
