@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <title>Portfolio - Hellen Truong</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="overflow-x-hidden text-gray-900 leading-7">
+    <!-- --------------------- Svg icons --------------------- -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+      <symbol
+        id="icon-menu"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+        />
+      </symbol>
+
+      <symbol
+        id="icon-close"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6 18 18 6M6 6l12 12"
+        />
+      </symbol>
+
+      <symbol
+        id="icon-download"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"
+        />
+      </symbol>
+
+      <symbol
+        id="icon-arrow-right"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+        />
+      </symbol>
+
+      <symbol
+        id="icon-code"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"
+        />
+      </symbol>
+      <symbol
+        id="icon-play"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="size-6"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm14.024-.983a1.125 1.125 0 0 1 0 1.966l-5.603 3.113A1.125 1.125 0 0 1 9 15.113V8.887c0-.857.921-1.4 1.671-.983l5.603 3.113Z"
+          clip-rule="evenodd"
+        />
+      </symbol>
+    </svg>
+
+    <!-- --------------------- About section --------------------- -->
+    <header id="about" class="section">
+      <div class="w-11/12 fixed top-0 right-0 -z-10 -translate-y-[80%]">
+        <img
+          src="./images/header-bg-color.png"
+          alt="Background image"
+          class="w-full"
+        />
+      </div>
+      <!-- --------------------- Global navbar --------------------- -->
+      <nav
+        class="w-full fixed px-4 lg:px-8 xl:px-12 py-4 flex items-center justify-between z-50"
+      >
+        <!-- <span
+          class="logo text-2xl md:text-3xl font-medium cursor-pointer mr-14 lg:w-[187px]"
+          >Hellen</span
+        > -->
+        <div class="cursor-pointer mr-14 lg:w-[187px]">
+          <img src="./images/logo.png" alt="Logo" class="w-8 lg:w-10" />
+        </div>
+
+        <ul
+          class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white/50 shadow-sm"
+        >
+          <li>
+            <a href="#about" class="nav-link">About</a>
+          </li>
+          <li>
+            <a href="#projects" class="nav-link">Projects</a>
+          </li>
+          <li>
+            <a href="#testimonials" class="nav-link">Testimonials</a>
+          </li>
+          <li class="block lg:hidden">
+            <a href="#contact" class="nav-link">Contact</a>
+          </li>
+        </ul>
+        <div class="flex items-center gap-4 md:ml-14">
+          <a href="Hellen_Truong_CV.pdf" download class="cursor-pointer">CV </a>
+          <a
+            href="#contact"
+            class="hidden lg:flex items-center px-10 py-2.5 border border-gray-500 rounded-full ml-4 hover:bg-pink-50 duration-500"
+            >Contact</a
+          >
+          <button
+            class="block md:hidden ml-3 cursor-pointer"
+            onclick="openMenu()"
+          >
+            <svg class="w-6 h-6">
+              <use href="#icon-menu"></use>
+            </svg>
+          </button>
+        </div>
+
+        <!-- --------------------- Mobile menu --------------------- -->
+
+        <div
+          id="sidemenu"
+          class="md:hidden py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-pink-50 transition duration-500"
+        >
+          <button
+            class="absolute right-6 top-6 cursor-pointer"
+            onclick="closeMenu()"
+          >
+            <svg class="w-6 h-6">
+              <use href="#icon-close"></use>
+            </svg>
+          </button>
+
+          <ul class="flex flex-col gap-6">
+            <li onclick="closeMenu()">
+              <a href="#about" class="nav-link">About</a>
+            </li>
+            <li onclick="closeMenu()">
+              <a href="#projects" class="nav-link">Projects</a>
+            </li>
+            <li onclick="closeMenu()">
+              <a href="#testimonials" class="nav-link">Testimonials</a>
+            </li>
+            <li onclick="closeMenu()">
+              <a href="#contact" class="nav-link">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- --------------------- Hero --------------------- -->
+      <div
+        class="w-11/12 max-w-3xl text-center pt-14 sm:pt-20 pb-20 mx-auto min-h-screen flex flex-col items-center justify-center gap-4"
+      >
+        <img
+          src="./images/profile.png"
+          alt="profile"
+          class="rounded-full w-32 md:mt-4"
+        />
+        <p class="text-xl md:text-2xl mb-2">
+          frontend web developer <br />
+          based in Jönköping
+        </p>
+        <h1 class="text-3xl md:text-5xl font-medium md:font-normal">
+          I build thoughtfully designed websites – from concept to clean,
+          structured frontend code – with focus on React
+        </h1>
+        <p class="md:text-lg max-w-2xl mx-auto">
+          Early-career frontend developer with background in ux/ui design
+          combines technical implementation with an understanding of content
+          structure and design principles. <br />
+        </p>
+
+        <ul
+          class="max-w-2xl flex flex-wrap items-center justify-center gap-2 mt-3"
+        >
+          <li
+            class="bg-gray-50 px-3 py-1 border border-gray-200 rounded-full text-gray-600 text-sm sm:text-base"
+          >
+            HTML
+          </li>
+          <li
+            class="bg-gray-50 px-3 py-1 border border-gray-200 rounded-full text-gray-600 text-sm sm:text-base"
+          >
+            CSS
+          </li>
+          <li
+            class="bg-gray-50 px-3 py-1 border border-gray-200 rounded-full text-gray-600 text-sm sm:text-base"
+          >
+            JavaScript
+          </li>
+          <li
+            class="bg-gray-50 px-3 py-1 border border-gray-200 rounded-full text-gray-600 text-sm sm:text-base"
+          >
+            React JS
+          </li>
+          <li
+            class="bg-gray-50 px-3 py-1 border border-gray-200 rounded-full text-gray-600 text-sm sm:text-base"
+          >
+            User Research
+          </li>
+          <li
+            class="bg-gray-50 px-3 py-1 border border-gray-200 rounded-full text-gray-600 text-sm sm:text-base"
+          >
+            Wireframing
+          </li>
+          <li
+            class="bg-gray-50 px-3 py-1 border border-gray-200 rounded-full text-gray-600 text-sm sm:text-base"
+          >
+            Prototyping
+          </li>
+          <li
+            class="bg-gray-50 px-3 py-1 border border-gray-200 rounded-full text-gray-600 text-sm sm:text-base"
+          >
+            User Testing
+          </li>
+        </ul>
+
+        <div class="flex flex-wrap items-center justify-center gap-4 mt-4">
+          <a
+            href="#projects"
+            class="flex items-center gap-2 px-7 sm:px-10 py-2.5 sm:py-3 border border-gray-300 rounded-full bg-gradient-to-r from-violet-200 to-pink-200 hover:from-violet-300 hover:to-pink-300 duration-500"
+            >View projects
+            <svg class="w-5 h-5">
+              <use href="#icon-arrow-right"></use>
+            </svg>
+          </a>
+          <a
+            href="Hellen_Truong_CV.pdf"
+            download
+            class="flex items-center gap-3 px-7 sm:px-10 py-2.5 sm:py-3 border border-gray-500 rounded-full bg-white hover:bg-pink-50 duration-500"
+          >
+            Download CV
+            <svg class="w-5 h-5">
+              <use href="#icon-download"></use>
+            </svg>
+          </a>
+        </div>
+
+        <div class="flex items-center gap-3 my-6">
+          <p class="text-gray-700">Tools I use:</p>
+          <ul class="flex items-center gap-3">
+            <li
+              class="flex items-center justify-center w-10 sm:w-12 h-10 sm:h-12 rounded-full border border-gray-400"
+            >
+              <img
+                src="./images/vscode.png"
+                alt="VS Code logo"
+                class="w-4 sm:w-6"
+              />
+            </li>
+            <li
+              class="flex items-center justify-center w-10 sm:w-12 h-10 sm:h-12 rounded-full border border-gray-400"
+            >
+              <img
+                src="./images/github.png"
+                alt="GitHub logo"
+                class="w-8 sm:w-10"
+              />
+            </li>
+            <li
+              class="flex items-center justify-center w-10 sm:w-12 h-10 sm:h-12 rounded-full border border-gray-400"
+            >
+              <img
+                src="./images/figma.png"
+                alt="Figma logo"
+                class="w-5 sm:w-7"
+              />
+            </li>
+            <li
+              class="flex items-center justify-center w-10 sm:w-12 h-10 sm:h-12 rounded-full border border-gray-400"
+            >
+              <img
+                src="./images/trello.png"
+                alt="Trello logo"
+                class="w-7 sm:w-9"
+              />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- --------------------- Project section --------------------- -->
+    <section id="projects" class="section w-full px-4 py-10 scroll-mt-20">
+      <p class="text-lg sm:text-xl text-center mb-2">My Work</p>
+      <h2 class="text-4xl sm:text-5xl text-center">Projects</h2>
+      <p class="sm:text-lg text-center max-w-2xl mx-auto mt-5 mb-12">
+        A selection of projects I've worked on, ranging from academic
+        assignments to personal initiatives and internship work.
+      </p>
+
+      <div
+        class="grid grid-cols-1 sm:grid-cols-[repeat(auto-fit,394px)] justify-center my-10 gap-5"
+      >
+        <article
+          class="relative w-full max-w-[394px] mx-auto border border-gray-400 rounded-lg p-4 flex flex-col"
+        >
+          <img
+            src="./images/nilo.png"
+            alt="Nilo project"
+            class="w-full h-[250px] object-cover rounded-lg px-1"
+          />
+
+          <div class="flex items-center gap-3 mt-4">
+            <h3 class="text-lg font-semibold text-gray-700">
+              Nilo workshop app
+            </h3>
+            <div
+              class="flex items-center px-3 py-1 bg-gray-50 border border-gray-200 rounded-full text-xs text-gray-600"
+            >
+              Internship
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 mt-2">
+            Further developed a workshop web application by debugging issues and
+            implementing new features based on Figma designs in an agile
+            environment.
+          </p>
+          <ul class="flex flex-wrap items-center gap-2 mt-5">
+            <li
+              class="bg-gray-50 px-3 py-1 border border-gray-200 rounded-full text-gray-600 text-xs"
+            >
+              HTML
+            </li>
+            <li
+              class="bg-gray-50 px-3 py-1 border border-gray-200 rounded-full text-gray-600 text-xs"
+            >
+              CSS styled-components
+            </li>
+            <li
+              class="bg-gray-50 px-3 py-1 border border-gray-200 rounded-full text-gray-600 text-xs"
+            >
+              JavaScript
+            </li>
+            <li
+              class="bg-gray-50 px-3 py-1 border border-gray-200 rounded-full text-gray-600 text-xs"
+            >
+              React JS
+            </li>
+            <li
+              class="bg-gray-50 px-3 py-1 border border-gray-200 rounded-full text-gray-600 text-xs"
+            >
+              Material UI
+            </li>
+          </ul>
+
+          <div class="flex flex-col gap-x-3 gap-y-2 mt-auto pt-6">
+            <p class="inline-block text-xs text-gray-700 ml-1.5">
+              Source code confidential, demo available upon request
+            </p>
+            <a
+              href="#contact"
+              class="flex items-center justify-center gap-1 text-sm px-8 py-3 border border-gray-500 rounded-full cursor-pointer text-gray-700 hover:bg-pink-50 duration-500"
+              >Request demo
+              <svg class="w-4 h-4 ml-1">
+                <use href="#icon-play"></use>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <article
+          class="relative w-full max-w-[394px] mx-auto border border-gray-400 rounded-lg p-4 flex flex-col"
+        >
+          <img
+            src="./images/femme.png"
+            alt="Nilo project"
+            class="w-full h-[250px] object-cover rounded-lg px-1"
+          />
+
+          <div class="flex items-center gap-3 mt-4">
+            <h3 class="text-lg font-semibold text-gray-700">E-shop website</h3>
+            <div
+              class="flex items-center px-3 py-1 bg-gray-50 border border-gray-200 rounded-full text-xs text-gray-600"
+            >
+              Course work
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 mt-2">
+            Built a responsive online store with focus on component-based
+            architecture, reusable UI components, and a functional shopping cart
+            flow
+          </p>
+          <ul class="flex flex-wrap items-center gap-2 mt-5">
+            <li
+              class="bg-gray-50 px-3 py-1 border border-gray-200 rounded-full text-gray-600 text-xs"
+            >
+              HTML
+            </li>
+            <li
+              class="bg-gray-50 px-3 py-1 border border-gray-200 rounded-full text-gray-600 text-xs"
+            >
+              CSS
+            </li>
+            <li
+              class="bg-gray-50 px-3 py-1 border border-gray-200 rounded-full text-gray-600 text-xs"
+            >
+              JavaScript
+            </li>
+            <li
+              class="bg-gray-50 px-3 py-1 border border-gray-200 rounded-full text-gray-600 text-xs"
+            >
+              React JS
+            </li>
+            <li
+              class="bg-gray-50 px-3 py-1 border border-gray-200 rounded-full text-gray-600 text-xs"
+            >
+              Flowbite
+            </li>
+          </ul>
+          <div class="flex items-center gap-3 mt-auto pt-6">
+            <a
+              href="https://github.com/hellentruongg/clothing-store"
+              target="_blank"
+              class="flex flex-1 items-center justify-center gap-1 text-sm px-8 py-3 border border-gray-500 rounded-full cursor-pointer text-gray-700 hover:bg-pink-50 duration-500"
+              >GitHub
+              <img src="./images/github.png" alt="GitHub logo" class="w-5" />
+            </a>
+            <a
+              href="#"
+              class="flex flex-1 items-center justify-center gap-2 text-sm px-8 py-3 border border-gray-500 rounded-full cursor-pointer text-gray-700 hover:bg-pink-50 duration-500"
+              >Demo
+              <img
+                src="./images/expand-icon.png"
+                alt="Expand icon"
+                class="w-3"
+              />
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- --------------------- Testimonial section --------------------- -->
+    <section id="testimonials" class="section w-full px-4 py-10 scroll-mt-20">
+      <p class="text-lg sm:text-xl text-center mb-2">What Others Say</p>
+      <h2 class="text-4xl sm:text-5xl text-center">Testimonials</h2>
+      <p class="sm:text-lg text-center max-w-2xl mx-auto mt-5 mb-12">
+        Feedback from supervisors, colleagues, and collaborators I've had the
+        pleasure of working with.
+      </p>
+      <div
+        class="max-w-2xl mx-auto flex flex-col items-center justify-center gap-6 border border-gray-400 rounded-lg px-8 py-12 my-10 text-center"
+      >
+        <img
+          class="w-20 h-20 rounded-full mx-auto mb-2"
+          src="./images/avatar-1.png"
+          alt="Testimonial profile"
+        />
+        <h3 class="text-xl font-medium text-gray-700">LIA Supervisor</h3>
+        <p class="text-sm text-gray-600 mb-2">Nilo Collaborations</p>
+        <p class="inline-block pb-4 text-gray-700">
+          Demonstrated confidence in taking on assignments, consistently
+          delivered high-quality solutions, and maintained a professional and
+          collaborative approach with colleagues.
+        </p>
+      </div>
+    </section>
+
+    <!-- --------------------- Contact section --------------------- -->
+    <section
+      id="contact"
+      class="section w-full px-4 py-10 scroll-mt-20 bg-[url('./images/footer-bg-color.png')] bg-no-repeat bg-cover bg-center"
+    >
+      <p class="text-lg sm:text-xl text-center mb-2">Let's Talk</p>
+      <h2 class="text-4xl sm:text-5xl text-center">Contact</h2>
+      <p class="sm:text-lg text-center max-w-2xl mx-auto mt-5 mb-12">
+        Feel free to get in touch about collaborations, questions, or internship
+        and junior developer opportunities.
+      </p>
+
+      <form
+        action="https://api.web3forms.com/submit"
+        method="POST"
+        class="max-w-2xl mx-auto"
+      >
+        <input
+          type="hidden"
+          name="access_key"
+          value="f2d60ed2-9fdb-4867-978a-06ef993bbc42"
+        />
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 mb-8">
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter your name"
+            class="flex-1 p-3 outline-none border border-gray-400 rounded-md bg-white"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            class="flex-1 p-3 outline-none border border-gray-400 rounded-md bg-white"
+            required
+          />
+        </div>
+        <textarea
+          name="message"
+          rows="6"
+          placeholder="Enter your message"
+          class="w-full p-4 outline-none border border-gray-400 rounded-md bg-white mb-6"
+          required
+        ></textarea>
+        <!-- <button
+          class="py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500"
+        > -->
+        <button
+          class="px-7 sm:px-10 py-2.5 sm:py-3 w-max flex items-center justify-between gap-2 rounded-full mx-auto border border-gray-300 bg-gradient-to-r from-violet-200 to-pink-200 hover:from-violet-300 hover:to-pink-300 duration-500 cursor-pointer"
+        >
+          Submit now
+          <!-- <img
+            src="./images/right-arrow-white.png"
+            alt="Right arrow"
+            class="w-4"
+          /> -->
+          <svg class="w-5 h-5">
+            <use href="#icon-arrow-right"></use>
+          </svg>
+        </button>
+      </form>
+    </section>
+
+    <!-- --------------------- Footer section --------------------- -->
+    <section id="footer" class="mt-20">
+      <div class="text-center">
+        <img
+          src="./images/logo.png"
+          alt="Logo"
+          class="w-12 mb-4 mx-auto"
+          mx-auto
+        />
+        <address class="not-italic">
+          Hellen Truong <br />
+          hellentruong123@gmail.com <br />
+          Jönköping, Sweden <br />
+        </address>
+
+        <div
+          class="text-center sm:flex items-center justify-between border-t border-gray-400 mx-8 my-12 py-6"
+        >
+          <p>&copy; 2026 Hellen Truong. All rights reserved.</p>
+
+          <ul class="flex items-center gap-10 justify-center mt-4 sm:mt-0">
+            <li>
+              <a href="https://github.com/hellentruongg" target="_blank"
+                >GitHub</a
+              >
+            </li>
+            <li>
+              <a href="www.linkedin.com/in/hellentruong" target="_blank"
+                >LinkedIn</a
+              >
+            </li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
