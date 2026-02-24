@@ -41,20 +41,18 @@ const observer = new IntersectionObserver(
       if (entry.isIntersecting) {
         navlinks.forEach((link) =>
           link.classList.remove(
-            "font-bold",
             "bg-gradient-to-r",
-            "from-purple-300",
-            "to-pink-300",
+            "from-purple-400",
+            "to-pink-400",
             "bg-clip-text",
             "text-transparent",
           ),
         );
         correspondingLinks.forEach((link) =>
           link.classList.add(
-            "font-bold",
             "bg-gradient-to-r",
-            "from-purple-300",
-            "to-pink-300",
+            "from-purple-400",
+            "to-pink-400",
             "bg-clip-text",
             "text-transparent",
           ),

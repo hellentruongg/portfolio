@@ -119,11 +119,7 @@
       <nav
         class="w-full fixed px-4 lg:px-8 xl:px-12 py-4 flex items-center justify-between z-50"
       >
-        <!-- <span
-          class="logo text-2xl md:text-3xl font-medium cursor-pointer mr-14 lg:w-[187px]"
-          >Hellen</span
-        > -->
-        <div class="cursor-pointer mr-14 lg:w-[187px]">
+        <div class="cursor-pointer mr-14 md:w-[47px] lg:w-[219px]">
           <img src="./images/logo.png" alt="Logo" class="w-8 lg:w-10" />
         </div>
 
@@ -144,10 +140,18 @@
           </li>
         </ul>
         <div class="flex items-center gap-4 md:ml-14">
-          <a href="Hellen_Truong_CV.pdf" download class="cursor-pointer">CV </a>
+          <a
+            href="Hellen_Truong_CV.pdf"
+            download
+            class="flex items-center gap-2 cursor-pointer"
+            >CV
+            <svg class="w-5 h-5">
+              <use href="#icon-download"></use>
+            </svg>
+          </a>
           <a
             href="#contact"
-            class="hidden lg:flex items-center px-10 py-2.5 border border-gray-500 rounded-full ml-4 hover:bg-pink-50 duration-500"
+            class="nav-link hidden lg:flex items-center px-10 py-2.5 border border-gray-500 rounded-full ml-4 hover:bg-pink-50 duration-500"
             >Contact</a
           >
           <button
@@ -199,20 +203,19 @@
         <img
           src="./images/profile.png"
           alt="profile"
-          class="rounded-full w-32 md:mt-4"
+          class="rounded-full w-26 md:mt-4"
         />
         <p class="text-xl md:text-2xl mb-2">
           frontend web developer <br />
-          based in Jönköping
+          based in Sweden
         </p>
         <h1 class="text-3xl md:text-5xl font-medium md:font-normal">
-          I build thoughtfully designed websites – from concept to clean,
-          structured frontend code – with focus on React
+          I build accessible, well-structured web applications – from UX
+          thinking to clean frontend code.
         </h1>
         <p class="md:text-lg max-w-2xl mx-auto">
-          Early-career frontend developer with background in ux/ui design
-          combines technical implementation with an understanding of content
-          structure and design principles. <br />
+          Frontend developer with background in UX/UI design combines technical
+          implementation with design knowledge. <br />
         </p>
 
         <ul
@@ -236,27 +239,32 @@
           <li
             class="bg-gray-50 px-3 py-1 border border-gray-200 rounded-full text-gray-600 text-sm sm:text-base"
           >
+            TypeScript
+          </li>
+          <li
+            class="bg-gray-50 px-3 py-1 border border-gray-200 rounded-full text-gray-600 text-sm sm:text-base"
+          >
             React JS
           </li>
           <li
             class="bg-gray-50 px-3 py-1 border border-gray-200 rounded-full text-gray-600 text-sm sm:text-base"
           >
-            User Research
+            REST APIs
           </li>
           <li
             class="bg-gray-50 px-3 py-1 border border-gray-200 rounded-full text-gray-600 text-sm sm:text-base"
           >
-            Wireframing
+            Git
           </li>
           <li
             class="bg-gray-50 px-3 py-1 border border-gray-200 rounded-full text-gray-600 text-sm sm:text-base"
           >
-            Prototyping
+            Responsive design
           </li>
           <li
             class="bg-gray-50 px-3 py-1 border border-gray-200 rounded-full text-gray-600 text-sm sm:text-base"
           >
-            User Testing
+            Accessibility (WCAG)
           </li>
         </ul>
 
@@ -270,13 +278,11 @@
             </svg>
           </a>
           <a
-            href="Hellen_Truong_CV.pdf"
-            download
             class="flex items-center gap-3 px-7 sm:px-10 py-2.5 sm:py-3 border border-gray-500 rounded-full bg-white hover:bg-pink-50 duration-500"
           >
-            Download CV
+            Contact me
             <svg class="w-5 h-5">
-              <use href="#icon-download"></use>
+              <use href="#icon-arrow-right"></use>
             </svg>
           </a>
         </div>
