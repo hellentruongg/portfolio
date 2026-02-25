@@ -24,16 +24,6 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// const isMobile = window.innerWidth < 768;
-
-// const threshold = isMobile ? 0.5 : 0.9;
-
-const width = window.innerWidth;
-
-const threshold = width < 855 ? 0.3 : 0.9;
-
-// const threshold = width < 640 ? 0.2 : width < 854 ? 0.5 : 0.9;
-
 const observer = new IntersectionObserver(
   (entries) => {
     console.log(entries);
@@ -66,7 +56,14 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: threshold },
+  { threshold: 0, rootMargin: "-40% 0px -40% 0px" },
 );
 
 sections.forEach((section) => observer.observe(section));
+
+window.addEventListener("load", () => {
+  sections.forEach((section) => {
+    observer.unobserve(section);
+    observer.observe(section);
+  });
+});
